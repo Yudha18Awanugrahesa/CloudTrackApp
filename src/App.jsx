@@ -409,12 +409,12 @@ export default function CloudTrackApp() {
           <div className="flex justify-between items-end mb-6 flex-wrap gap-3">
             <div>
               <h2 className="text-[21px] font-bold text-[#16211C] m-0 tracking-tight">
-                {activeTab === "Dashboard" ? "Dashboard Keuangan" : activeTab}
+                {activeTab === "Dashboard" ? "Dashboard" : activeTab}
               </h2>
-              <p className="text-[13px] text-[#667066] mt-1">
+              <p className="text-[18px] text-[#667066] mt-1">
                 {activeTab === "Dashboard"
-                  ? `by ${user}`
-                  : "Kelola data keuangan Anda"}
+                  ? `Hallo ${user} 👋`
+                  : "Kelola keuangan Anda"}
               </p>
             </div>
           </div>
@@ -697,7 +697,7 @@ function LoginScreen({ onLogin }) {
           <div className="mt-8 pt-6 border-t border-[#EDF0ED] text-center">
             <p className="text-[11px] text-[#93998F]">
               Design by{" "}
-              <strong className="text-[#16211C]">Yudha Awanugrahesa</strong>
+              <strong className="text-[#16211C]">Cloud Corp.</strong>
             </p>
           </div>
         </div>
@@ -1153,7 +1153,7 @@ function TransactionView({ transactions, setTransactions }) {
                     }
                   >
                     <option value="" disabled hidden>
-                      -- Pilih Jenis --
+                      Pilih Jenis
                     </option>
                     <option value="Pemasukan">Pemasukan</option>
                     <option value="Pengeluaran">Pengeluaran</option>
@@ -1188,7 +1188,7 @@ function TransactionView({ transactions, setTransactions }) {
                   }
                 >
                   <option value="" disabled hidden>
-                    -- Pilih Kategori --
+                    Pilih Kategori
                   </option>
 
                   {/* 4. Pastikan type sudah dipilih sebelum merender pilihan kategori */}
@@ -1212,7 +1212,7 @@ function TransactionView({ transactions, setTransactions }) {
                   type="number"
                   required
                   min="1"
-                  placeholder="Contoh: 50000"
+                  placeholder="0"
                   className="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-500 focus:bg-white"
                   value={formData.amount}
                   onChange={(e) =>
@@ -1228,7 +1228,7 @@ function TransactionView({ transactions, setTransactions }) {
                 <input
                   type="text"
                   required
-                  placeholder="Cth: Beli makan siang"
+                  placeholder=" "
                   className="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-500 focus:bg-white"
                   value={formData.description}
                   onChange={(e) =>
@@ -1545,7 +1545,7 @@ function TargetView({ targets, setTargets }) {
                 <input
                   type="text"
                   required
-                  placeholder="Cth: Beli Laptop Baru"
+                  placeholder=" "
                   className="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-500 focus:bg-white"
                   value={formData.name}
                   onChange={(e) =>
@@ -1561,7 +1561,7 @@ function TargetView({ targets, setTargets }) {
                   type="number"
                   required
                   min="1"
-                  placeholder="Contoh: 10000000"
+                  placeholder="0"
                   className="w-full p-2.5 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:border-blue-500 focus:bg-white"
                   value={formData.targetAmount}
                   onChange={(e) =>
