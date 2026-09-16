@@ -45,6 +45,9 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
+import logoImage from './assets/cloudtrack-logo.jpg';
+
+
 const CATEGORI_PEMASUKAN = [
   "Gaji",
   "Uang saku",
@@ -498,7 +501,7 @@ function LoginScreen({ onLogin }) {
           {/* Header Logo */}
           <div className="flex items-center gap-4 relative z-10">
             <img
-              src="/src/assets/cloudtrack-logo.jpg"
+              src={logoImage}
               alt="CloudTrack Logo"
               className="w-16 h-16 object-contain rounded-2xl shadow-md"
             />
@@ -573,7 +576,7 @@ function LoginScreen({ onLogin }) {
             <div className="flex items-center gap-2.5 mb-2 lg:hidden">
               <div className="w-15 h-15 rounded-lg text-white flex items-center justify-center font-bold text-sm">
                 <img
-                  src="/cloudtrack-logo.jpg"
+                  src={logoImage}
                   alt="CloudTrack Logo"
                   className="w-16 h-16 object-contain rounded-2xl shadow-md"
                 />
