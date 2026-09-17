@@ -45,7 +45,7 @@ import {
   Tooltip,
   Legend,
 } from "recharts";
-import logoImage from './assets/cloudtrack-logo.jpg';
+import logoImage from './assets/cloudtrack-logo.png';
 
 
 const CATEGORI_PEMASUKAN = [
@@ -120,79 +120,23 @@ const generateDummyData = () => {
   const currentMonth = getCurrentMonthString();
 
   return {
-    transactions: [
-      {
-        id: generateId(),
-        date: today,
-        type: "Pemasukan",
-        category: "Penjualan Barang/Jasa",
-        amount: 500000,
-        description: "Penjualan CHOCREA TOYS",
-        method: "Transfer",
-      },
-      {
-        id: generateId(),
-        date: today,
-        type: "Pemasukan",
-        category: "Uang saku",
-        amount: 1500000,
-        description: "Saku KKN",
-        method: "Cash",
-      },
-      {
-        id: generateId(),
-        date: today,
-        type: "Pengeluaran",
-        category: "Belanja",
-        amount: 250000,
-        description: "Beli helm kuning",
-        method: "E-wallet",
-      },
-      {
-        id: generateId(),
-        date: today,
-        type: "Pengeluaran",
-        category: "Lainnya",
-        amount: 300000,
-        description: "Bahan multiplex Presbotik",
-        method: "Cash",
-      },
-      {
-        id: generateId(),
-        date: today,
-        type: "Pengeluaran",
-        category: "Makanan/Minuman",
-        amount: 150000,
-        description: "Konsumsi KKN Sorosutan",
-        method: "Transfer",
-      },
-    ],
-    targets: [
-      {
-        id: generateId(),
-        name: "Modal Usaha CHOCREA",
-        targetAmount: 5000000,
-        currentAmount: 1000000,
-        deadline: "2027-12-31",
-        description: "Modal awal untuk produksi mainan",
-      },
-    ],
-    budgets: [
-      {
-        id: generateId(),
-        month: currentMonth,
-        category: "Belanja",
-        limitAmount: 500000,
-      },
-      {
-        id: generateId(),
-        month: currentMonth,
-        category: "Makanan/Minuman",
-        limitAmount: 500000,
-      },
-    ],
+    transactions: [],
+    targets: [],
+    budgets: [],
   };
 };
+
+// Komponen Teks "CloudTrack" Saja
+function CloudTrackText({ size = "text-xl" }) {
+  return (
+    <span className={`font-extrabold tracking-tight ${size}`}>
+      <span className="text-[#3B82F6]">Cloud</span>
+      <span className="text-[#0E9F6E]">Track</span>
+    </span>
+  );
+}
+
+
 
 export default function CloudTrackApp() {
   const [user, setUser] = useState(
@@ -360,17 +304,21 @@ export default function CloudTrackApp() {
   ];
 
   return (
-    // Latar belakang utama FinTrack (#F6F8F6)
+    // Latar belakang utama Cloud Track (#F6F8F6)
     <div className="min-h-screen bg-[#F6F8F6] text-[#16211C] flex font-sans">
       {/* SIDEBAR DESKTOP: Lebar spesifik 232px seperti FinTrack */}
       <aside className="hidden md:flex flex-col w-[232px] bg-white border-r border-[#E3E7E3] fixed h-full z-20">
-        <div className="px-4 py-6 flex items-center gap-2.5">
-          <div className="w-[30px] h-[30px] bg-[#0E9F6E] rounded-[9px] text-white flex items-center justify-center font-bold text-[14px] shrink-0">
-            CT
+        <div className="px-3 py-6 flex items-center gap-2.5">
+          <div className="w-[60px] h-[50px] rounded-[9px] flex items-center justify-center shrink-0">
+            <img
+              src={logoImage}
+              alt="CloudTrack Logo"
+              className="w- h-16 object-contain rounded-2xl shadow"
+            />
           </div>
           <div>
-            <h1 className="text-[16.5px] font-bold tracking-tight text-[#16211C] leading-none">
-              CloudTrack
+            <h1 className="text-2xl font-bold">
+              <CloudTrackText size="text-2xl" />
             </h1>
             <p className="text-[10.5px] text-[#93998F] mt-0.5">
               Keuangan Pribadi
@@ -477,9 +425,9 @@ function LoginScreen({ onLogin }) {
     setError("");
 
     // Pengecekan username dan password
-    if (username === "Yudha Awanugrahesa" && password === "12345678") {
+    if (username === "Awan" && password === "18") {
       setIsLoading(true);
-
+ 
       // Memberikan jeda animasi loading sebentar sebelum masuk
       setTimeout(() => {
         onLogin(username);
@@ -506,7 +454,7 @@ function LoginScreen({ onLogin }) {
               className="w-16 h-16 object-contain rounded-2xl shadow-md"
             />
             <div>
-              <span className="text-2xl font-extrabold tracking-tight text-[#16211C]">
+              <span className="text-2xl font-extrabold tracking-tight text-[#3B82F6]">
                 Cloud<span className="text-[#0E9F6E]">Track</span>
               </span>
               <p className="text-xs text-[#667066] font-medium tracking-wide mt-0.5">
@@ -581,8 +529,8 @@ function LoginScreen({ onLogin }) {
                   className="w-16 h-16 object-contain rounded-2xl shadow-md"
                 />
               </div>
-              <span className="text-lg font-bold text-[#16211C]">
-                CloudTrack
+              <span className="text-2xl font-extrabold tracking-tight text-[#3B82F6]">
+                Cloud<span className="text-[#0E9F6E]">Track</span>
               </span>
             </div>
             <h2 className="text-2xl font-bold text-[#16211C] tracking-tight">
